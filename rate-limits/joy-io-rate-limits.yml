@@ -1,0 +1,26 @@
+generated: '2026-08-17'
+method: searched
+source: https://joy.io/, https://joy.io/nos-offres, https://faq.joy.io/llms.txt
+limit_count: 0
+note: >-
+  NO RATE LIMITS ARE DOCUMENTED BECAUSE THERE IS NO PUBLIC API TO LIMIT. Joy publishes no developer
+  portal, no API reference, no OpenAPI and no webhook catalogue; the joy.io sitemap (57 URLs) contains
+  no developer or API page and the help-center llms.txt (134 lines, 9 categories, ~90 articles) does
+  not contain the string "api" once. The private backend the manager app calls
+  (manager-api.privateaser.com, found in https://app.joy.io/config.js) returns HTTP 404 on every spec
+  path and is gated by an AWS Cognito user pool, so no unauthenticated response was available to
+  observe rate-limit headers on. No RateLimits pointer is wired into apis.yml — this file records an
+  absence, not a published limit surface.
+  The only ceilings Joy publishes are commercial, not technical: an annual processed-revenue cap per
+  subscription tier (100k / 200k / 400k EUR) and minimum qualified-view counts on the Privateaser
+  marketplace. Those live in plans/joy-io-plans-pricing.yml.
+limits: []
+response_headers: []
+exhaustion_status: null
+x-evidence:
+- url: https://joy.io/sitemap.xml
+  status: 200
+- url: https://faq.joy.io/llms.txt
+  status: 200
+- url: https://manager-api.privateaser.com/openapi.json
+  status: 404

@@ -1,0 +1,86 @@
+generated: '2026-08-17'
+method: probed
+source: live probes of /.well-known/* on every Joy / Privateaser host
+summary:
+  documents_found: 0
+  note: >-
+    NO WELL-KNOWN DOCUMENT IS SERVED. This file records a measured absence, not a presence, and
+    therefore NO WellKnown / SecurityTxt / APICatalog pointer is wired into apis.yml.
+    joy.io, app.joy.io and app.privateaser.com are single-page applications whose catch-all route
+    answers HTTP 200 with the same HTML shell for every path — including every /.well-known/* path,
+    /llms.txt and /openapi.json — so a 200 on those hosts is a soft-404 and was treated as a miss
+    (identical byte length on every path is the tell: 7,354 bytes on joy.io, 87,314 on app.joy.io,
+    274,847-274,861 on app.privateaser.com). www.privateaser.com and manager-api.privateaser.com
+    return honest 404s. faq.joy.io returns 404 (or 500 on the OAuth/OIDC paths) for every
+    /.well-known/* path but DOES serve a real /llms.txt, captured separately at llms/joy-io-llms.txt.
+hosts:
+- host: https://joy.io
+  soft_404: true
+  soft_404_evidence: every probed path returns HTTP 200, content-type text/html, size 7354 bytes
+  documents:
+  - {path: /.well-known/security.txt, status: 200, verdict: html-spa-shell, file: null}
+  - {path: /.well-known/openid-configuration, status: 200, verdict: html-spa-shell, file: null}
+  - {path: /.well-known/oauth-authorization-server, status: 200, verdict: html-spa-shell, file: null}
+  - {path: /.well-known/api-catalog, status: 200, verdict: html-spa-shell, file: null}
+  - {path: /.well-known/ai-plugin.json, status: 200, verdict: html-spa-shell, file: null}
+  - {path: /.well-known/agent-card.json, status: 200, verdict: html-spa-shell, file: null}
+  - {path: /.well-known/agent.json, status: 200, verdict: html-spa-shell, file: null}
+  - {path: /llms.txt, status: 200, verdict: html-spa-shell, file: null}
+  - {path: /openapi.json, status: 200, verdict: html-spa-shell, file: null}
+- host: https://app.joy.io
+  soft_404: true
+  soft_404_evidence: every probed path returns HTTP 200, content-type text/html, size 87314 bytes
+  documents:
+  - {path: /.well-known/security.txt, status: 200, verdict: html-spa-shell, file: null}
+  - {path: /.well-known/openid-configuration, status: 200, verdict: html-spa-shell, file: null}
+  - {path: /.well-known/oauth-authorization-server, status: 200, verdict: html-spa-shell, file: null}
+  - {path: /.well-known/api-catalog, status: 200, verdict: html-spa-shell, file: null}
+  - {path: /.well-known/ai-plugin.json, status: 200, verdict: html-spa-shell, file: null}
+  - {path: /.well-known/agent-card.json, status: 200, verdict: html-spa-shell, file: null}
+  - {path: /.well-known/agent.json, status: 200, verdict: html-spa-shell, file: null}
+  - {path: /llms.txt, status: 200, verdict: html-spa-shell, file: null}
+  - {path: /openapi.json, status: 200, verdict: html-spa-shell, file: null}
+- host: https://faq.joy.io
+  soft_404: false
+  documents:
+  - {path: /.well-known/security.txt, status: 404, file: null}
+  - {path: /.well-known/openid-configuration, status: 500, file: null}
+  - {path: /.well-known/oauth-authorization-server, status: 500, file: null}
+  - {path: /.well-known/api-catalog, status: 500, file: null}
+  - {path: /.well-known/ai-plugin.json, status: 404, file: null}
+  - {path: /.well-known/agent-card.json, status: 404, file: null}
+  - {path: /.well-known/agent.json, status: 404, file: null}
+  - {path: /openapi.json, status: 404, file: null}
+  - {path: /llms.txt, status: 200, verdict: real-document, file: ../llms/joy-io-llms.txt,
+     note: 'the only machine-readable document Joy serves anywhere; 28,405 bytes, text/plain'}
+- host: https://www.privateaser.com
+  soft_404: false
+  documents:
+  - {path: /.well-known/security.txt, status: 404, file: null}
+  - {path: /.well-known/openid-configuration, status: 404, file: null}
+  - {path: /.well-known/oauth-authorization-server, status: 404, file: null}
+  - {path: /.well-known/api-catalog, status: 404, file: null}
+  - {path: /.well-known/ai-plugin.json, status: 404, file: null}
+  - {path: /.well-known/agent-card.json, status: 404, file: null}
+  - {path: /.well-known/agent.json, status: 404, file: null}
+  - {path: /llms.txt, status: 404, file: null}
+  - {path: /openapi.json, status: 404, file: null}
+- host: https://app.privateaser.com
+  soft_404: true
+  soft_404_evidence: every probed path returns HTTP 200, content-type text/html, size ~274847 bytes
+  documents:
+  - {path: /.well-known/security.txt, status: 200, verdict: html-spa-shell, file: null}
+  - {path: /.well-known/agent-card.json, status: 200, verdict: html-spa-shell, file: null}
+  - {path: /.well-known/agent.json, status: 200, verdict: html-spa-shell, file: null}
+  - {path: /llms.txt, status: 200, verdict: html-spa-shell, file: null}
+  - {path: /openapi.json, status: 200, verdict: html-spa-shell, file: null}
+- host: https://manager-api.privateaser.com
+  soft_404: false
+  note: private backend for the Joy manager app; honest 404s (207-byte body) on every path
+  documents:
+  - {path: /.well-known/security.txt, status: 404, file: null}
+  - {path: /.well-known/openid-configuration, status: 404, file: null}
+  - {path: /.well-known/oauth-authorization-server, status: 404, file: null}
+  - {path: /.well-known/api-catalog, status: 404, file: null}
+  - {path: /.well-known/agent-card.json, status: 404, file: null}
+  - {path: /.well-known/agent.json, status: 404, file: null}

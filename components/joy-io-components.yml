@@ -1,0 +1,78 @@
+generated: '2026-08-17'
+method: searched
+source: https://faq.joy.io/ (help center articles, fetched as .md)
+note: >-
+  Joy ships NO SDK and NO API, but it does publish a documented client-side embed surface: a hosted
+  booking form ("formulaire de réservation" / "Widget de Réservation Intelligent") that a venue
+  generates inside the Joy manager app and then embeds on its own website inside an iframe. This is
+  the only first-party integration surface Joy documents for customers, alongside two channel
+  buttons (Reserve with Google, social links) and a one-click reservation copy into Zenchef. There is
+  no loader library, no JavaScript element API, no configuration options and no events — the embed is
+  a single iframe with a per-establishment URL, so nothing here is programmable.
+families:
+- name: Booking form embed (formulaire de réservation)
+  kind: hosted-iframe
+  distribution: iframe
+  loader_library: null
+  configurable: false
+  how_to_get: >-
+    Joy manager app (https://app.joy.io/) -> Établissements -> Formulaires de réservation -> copy link
+  embed_snippet_shape: >-
+    <iframe src="<per-establishment booking form URL>" style="width: 100%; height: 100%;
+    min-width: 320px; min-height: 680px; border: 0;"></iframe>
+  published_dimensions:
+    min_width: 320px
+    min_height: 680px
+  docs: https://faq.joy.io/booster-vos-réservations-via-vos-réseaux-sociaux/sms31VTaoPvoPrxvonNMnX/comment-faire-une-intégration-de-votre-formulaire-de-réservation-directement-sur-votre-site-internet-/1bNahfVsMK8aDqyJoHrU7C
+  last_updated: '2023-07-19'
+  note: >-
+    requests submitted through the embed land directly in the venue's Joy inbox; the URL is
+    per-establishment and is not published, so no example value is recorded here.
+- name: Booking button — Wix
+  kind: platform-install-guide
+  distribution: host-platform-embed
+  docs: https://faq.joy.io/booster-vos-réservations-via-vos-réseaux-sociaux/sms31VTaoPvoPrxvonNMnX/comment-installer-un-bouton-de-réservation-sur-votre-site-wix-/5HoAyDdj4zGdVBoN5DfSK5
+  note: install guide for placing the booking form link/button on a Wix site; no Wix app or plugin is published
+- name: Booking button — WordPress
+  kind: platform-install-guide
+  distribution: host-platform-embed
+  docs: https://faq.joy.io/booster-vos-réservations-via-vos-réseaux-sociaux/sms31VTaoPvoPrxvonNMnX/comment-installer-un-bouton-de-réservation-sur-votre-site-wordpress-/94anQc8dfyReRGpj7gjRN7
+  note: install guide only; no WordPress plugin is published on wordpress.org
+- name: Booking link — Zenchef
+  kind: platform-install-guide
+  distribution: host-platform-embed
+  docs: https://faq.joy.io/booster-vos-réservations-via-vos-réseaux-sociaux/sms31VTaoPvoPrxvonNMnX/comment-intégrer-un-lien-de-réservation-depuis-zenchef-/7aPGvz8GdzVFuvCA2wd1S8
+- name: Reserve with Google button
+  kind: channel-integration
+  distribution: google-business-profile
+  docs: https://faq.joy.io/booster-vos-réservations-via-vos-réseaux-sociaux/sms31VTaoPvoPrxvonNMnX/bouton-reserve-with-google-depuis-votre-fiche-détablissement-google/45LiEAn6MggsZup1ofUMnf
+  note: >-
+    Joy places a Reserve with Google booking button on the venue's Google Business Profile. Joy is
+    therefore acting as a Google Actions Center booking partner, but publishes nothing about that
+    integration itself.
+- name: Event showcase page (vitrine événementielle)
+  kind: hosted-page
+  distribution: hosted
+  note: >-
+    SEO/GEO-optimised hosted event page per establishment, 1 page on Basic/Advanced and 2 on Expert
+    (see plans/joy-io-plans-pricing.yml). A hosted surface, not an embeddable component.
+third_party_outbound:
+- partner: Zenchef
+  direction: joy -> zenchef
+  mechanism: one-click "Copy to Zenchef" of a confirmed reservation
+  docs: https://help.zenchef.com/hc/en-gb/articles/25136854612893-Joy-Privateaser
+  note: >-
+    Documented by Zenchef, not by Joy. Copy is one-way and one-shot; later edits on either side do
+    not sync. Configured from the Zenchef partners tab using the Zenchef restaurantId.
+- partner: Stripe
+  direction: joy -> stripe
+  mechanism: Stripe-backed deposits (cautions), prepayments and payment requests
+  docs: https://faq.joy.io/caution-paiement-devis-et-facturation/noxjtcZsvatbmFFhoTgLF6
+  note: venues connect an existing or new Stripe account to Joy; 1.6% bank commission per the pricing page
+x-evidence:
+- url: https://faq.joy.io/llms.txt
+  status: 200
+- url: https://faq.joy.io/booster-vos-réservations-via-vos-réseaux-sociaux/sms31VTaoPvoPrxvonNMnX/comment-faire-une-intégration-de-votre-formulaire-de-réservation-directement-sur-votre-site-internet-/1bNahfVsMK8aDqyJoHrU7C.md
+  status: 200
+- url: https://joy.io/nos-offres
+  status: 200

@@ -1,0 +1,91 @@
+generated: '2026-08-17'
+method: searched
+source: https://joy.io/nos-offres
+currency: EUR
+billing_period: unstated
+plan_count: 3
+note: >-
+  Joy publishes three named tiers with a full feature-comparison matrix, but PUBLISHES NO PRICE for
+  any of them: every tier's call to action is "En savoir plus" / "Demander une démo" and the page
+  carries no figure in EUR for the subscription itself. Every `price` below is therefore null — a
+  measured absence, not an omission. The only monetary figures Joy does publish on this page are the
+  annual processed-revenue ceiling per tier, a 0% commission on reservations across all three tiers,
+  and a 1.6% bank commission on Stripe-collected payments and deposits. These are self-serve SaaS
+  subscriptions for hospitality venues, not API plans — Joy publishes no API and no API pricing.
+plans:
+- name: Basic
+  tagline: Pour structurer
+  price: null
+  price_published: false
+  currency: EUR
+  billing_period: unstated
+  commission_on_reservations: 0%
+  limits:
+    processed_revenue_cap_per_year: 100000 EUR
+    event_showcase_pages: 1
+    pro_photo_shoots: 1
+    privateaser_visibility: Basique (visible mais non boosté)
+    b2b_networks: false
+  included:
+  - Gestion avec la Joy app (unified calendar + messaging, centralised email/calls/social)
+  - Assistant Virtuel (virtual phone assistant)
+  - Zenchef integration
+  - Paiement et Caution via Stripe (1.6% bank commission)
+  - Devis et Facturation (French dematerialised-invoicing compliant)
+  - CRM et Base Clients (RGPD)
+  - Widget de Réservation Intelligent (website, Google, Instagram, WhatsApp)
+  - Rapports d'activité
+  target: establishments already doing 3 group bookings per month
+- name: Advanced
+  tagline: Pour accélérer
+  most_popular: true
+  price: null
+  price_published: false
+  currency: EUR
+  billing_period: unstated
+  commission_on_reservations: 0%
+  limits:
+    processed_revenue_cap_per_year: 200000 EUR
+    event_showcase_pages: 1
+    pro_photo_shoots: 1
+    privateaser_visibility: Booster 1 (min. 400 qualified views/year)
+    b2b_networks: false
+  included:
+  - everything in Basic
+  - Booster 1 visibility on the Privateaser marketplace
+  - Conseils stratégiques personnalisés
+  target: establishments already doing 5-6 group bookings per month
+- name: Expert
+  tagline: Pour diversifier
+  price: null
+  price_published: false
+  currency: EUR
+  billing_period: unstated
+  commission_on_reservations: 0%
+  limits:
+    processed_revenue_cap_per_year: 400000 EUR
+    event_showcase_pages: 2
+    event_showcase_pages_note: 1 of the 2 dedicated to corporate/B2B
+    pro_photo_shoots: 2
+    privateaser_visibility: Booster 2 (min. 800 qualified views/year including B2B)
+    b2b_networks: true
+  included:
+  - everything in Advanced
+  - Cible B2B et Agences — access to Naboo, IME, Snapevent and similar corporate-event networks
+  - Optimisation du taux de transformation
+  target: establishments already doing 10+ group bookings per month
+fees:
+  reservation_commission: 0%
+  stripe_bank_commission: 1.6%
+  referencing_fees: >-
+    "frais de référencement" are billed and explained in the help center
+    (https://faq.joy.io/tout-savoir-sur-la-facturation-de-votre-abonnement/7bT88SGuNJopLSr7h7mubd);
+    the amount is not published publicly.
+  prorata: >-
+    monthly subscriptions are pro-rated when a partnership starts mid-month (help center,
+    same section); the rate is not published.
+x-evidence:
+- url: https://joy.io/nos-offres
+  status: 200
+- url: https://faq.joy.io/llms.txt
+  status: 200

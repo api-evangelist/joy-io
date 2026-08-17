@@ -1,0 +1,74 @@
+generated: '2026-08-17'
+method: searched
+source: >-
+  registry.npmjs.org (search + package metadata), pypi.org, joy.io, faq.joy.io,
+  https://api.github.com/orgs/Privateaser-Joy
+summary:
+  sdk_count: 0
+  official_packages: 1
+  note: >-
+    JOY PUBLISHES NO API CLIENT LIBRARY IN ANY LANGUAGE. No SDKs pointer is wired into apis.yml,
+    because the one first-party package found is not an API client: `prvjs` is Privateaser's shared
+    front-end JavaScript code, published once in 2019 and never updated. npm searches for
+    "privateaser", "joy-io" and "joyio" return nothing else first-party; pypi.org/pypi/privateaser
+    and pypi.org/pypi/joy-io both return HTTP 404; the company's GitHub organisation
+    (github.com/Privateaser-Joy, created 2023-06-27) has 0 public repositories.
+packages:
+- language: javascript
+  registry: npm
+  name: prvjs
+  url: https://www.npmjs.com/package/prvjs
+  install: npm install prvjs
+  official: true
+  kind: internal-frontend-library
+  is_api_client: false
+  version: 1.8.0
+  published: '2019-11-18'
+  versions_published: 1
+  repository: https://bitbucket.org/privateaser/prvjs
+  description: Shared JavaScript front-end code
+  note: >-
+    First-party — the npm homepage and repository both point at Privateaser's own Bitbucket org — but
+    it is shared front-end code, not a client for any Joy or Privateaser API. Single version, last
+    published 2019-11-18, more than six years stale at the time of this pass. Recorded as an honest
+    finding, not as an SDK.
+absent:
+- registry: pypi
+  checked: [privateaser, joy-io]
+  status: 404
+- registry: npm
+  checked: [joy-io, joyio, '@joy/sdk', privateaser-sdk]
+  status: not-found
+- registry: rubygems
+  checked: [privateaser, joy-io]
+  status: not-searched
+  note: no evidence of any Ruby surface; Joy documents no API to wrap
+- registry: wordpress.org
+  checked: [joy, privateaser]
+  status: not-found
+  note: >-
+    the WordPress help-center article is an HTML embed guide, not a plugin listing
+mobile_apps:
+- platform: ios
+  url: https://apps.apple.com/fr/app/joy-io/id1255179313
+  note: end-user manager app, not a developer package
+- platform: android
+  id: com.privateaser.manager1
+  url: https://play.google.com/store/apps/details?id=com.privateaser.manager1
+  note: end-user manager app, not a developer package
+open_source_surface:
+  github_org: https://github.com/Privateaser-Joy
+  github_org_created: '2023-06-27'
+  public_repos: 0
+  note: >-
+    The organisation exists and is theirs (location "France"), but it publishes nothing. No
+    GitHubOrganization pointer is wired into apis.yml because there is no public code behind it.
+x-evidence:
+- url: https://registry.npmjs.org/prvjs
+  status: 200
+- url: https://pypi.org/pypi/privateaser/json
+  status: 404
+- url: https://pypi.org/pypi/joy-io/json
+  status: 404
+- url: https://api.github.com/orgs/Privateaser-Joy/repos?per_page=100
+  status: 200

@@ -1,19 +1,34 @@
 aid: joy-io
 name: Joy (ex-Privateaser)
-description: 'Joy (ex-Privateaser) is a company surfaced as a portfolio company of serena and added to
-  the API Evangelist network as a stub for enrichment. Sector: marketplace. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: 'Joy is a French SaaS platform for bars, restaurants and venues that turns group and event
+  enquiries into confirmed bookings. Founded in 2014 as Privateaser, the company now runs a two-sided
+  business: privateaser.com, the group-venue marketplace that captures demand, and Joy, the manager-facing
+  application (web plus iOS/Android) where an establishment centralises requests from Google, Instagram,
+  its own website, WhatsApp and Privateaser, then works them through a unified calendar and messaging
+  inbox, an SEO/GEO-optimised event showcase page, a virtual phone assistant, quotes, French-compliant
+  invoicing, and Stripe-backed deposits and prepayments. Joy reports more than 3,000 partner establishments
+  and over EUR100M in bookings managed in 2025. It publishes no public API, SDK, webhook catalogue or
+  developer portal; the only integration surfaces it documents for customers are an embeddable iframe
+  booking form, Reserve-with-Google, and a one-click reservation copy into Zenchef.'
 url: https://raw.githubusercontent.com/api-evangelist/joy-io/refs/heads/main/apis.yml
 x-type: company
 x-source: serena-portfolio
 x-tier: stub
 x-tier-reason: portfolio-lead
+image: https://joy.io/og-image.png
 specificationVersion: '0.20'
 created: '2026-08-17'
 modified: '2026-08-17'
 tags:
 - Company
 - Marketplace
+- Reservations
+- Bookings
+- Restaurants
+- Hospitality
+- Events
+- SaaS
+- France
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -22,4 +37,56 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://www.joy.io/
+  url: https://joy.io/
+- type: Support
+  name: Joy FAQ (help center)
+  url: https://faq.joy.io/
+- type: Blog
+  url: https://joy.io/blog
+- type: Pricing
+  url: https://joy.io/nos-offres
+- type: Login
+  name: Joy manager app sign-in
+  url: https://app.joy.io/
+- type: TermsOfService
+  name: Privateaser CGU (PDF)
+  url: https://www.privateaser.com/cgu
+- type: PrivacyPolicy
+  url: https://joy.io/politique-de-confidentialite
+- type: LLMsTxt
+  name: llms.txt (verbatim from faq.joy.io)
+  url: llms/joy-io-llms.txt
+- type: Plans
+  url: plans/joy-io-plans-pricing.yml
+- type: Components
+  name: Embeddable booking form / reservation widget
+  url: components/joy-io-components.yml
+- type: Packages
+  url: packages/joy-io-packages.yml
+- type: DomainSecurity
+  url: security/joy-io-domain-security.yml
+x-enrichment:
+  date: '2026-08-17'
+  status: minimal
+  artifacts_added: 7
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Joy ships software only as an end-user product — a manager web/mobile app plus a hosted booking
+    widget — and publishes no developer portal, API reference, OpenAPI, webhook catalogue or SDK; the
+    private backend its own app calls, manager-api.privateaser.com (read from
+    https://app.joy.io/config.js), returns HTTP 404 on /openapi.json and every other spec path and is
+    gated by an AWS Cognito user pool, and the 90-article help-center index at faq.joy.io/llms.txt
+    never uses the word "api".
+  evidence:
+  - url: https://manager-api.privateaser.com/openapi.json
+    status: 404
+  - url: https://joy.io/sitemap.xml
+    status: 200
+  - url: https://faq.joy.io/llms.txt
+    status: 200
+  - url: https://api.github.com/orgs/Privateaser-Joy/repos?per_page=100
+    status: 200
+  checked: '2026-08-17'
