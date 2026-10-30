@@ -64,6 +64,96 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Joy (ex-Privateaser) is a company surfaced as a portfolio company of serena and added to the API Evangelist network as a stub for enrichment. Sector: marketplace. This profile is a lead awaiting the enrichment pipeline.
+Joy is a French SaaS platform for bars, restaurants and venues that turns group and event enquiries into confirmed bookings. Founded in 2014 as Privateaser, the company now runs a two-sided business: privateaser.com, the group-venue marketplace that captures demand, and Joy, the manager-facing application (web plus iOS/Android) where an establishment centralises requests from Google, Instagram, its own website, WhatsApp and Privateaser, then works them through a unified calendar and messaging inbox, an SEO/GEO-optimised event showcase page, a virtual phone assistant, quotes, French-compliant invoicing, and Stripe-backed deposits and prepayments. Joy reports more than 3,000 partner establishments and over EUR100M in bookings managed in 2025. It publishes no public API, SDK, webhook catalogue or developer portal; the only integration surfaces it documents for customers are an embeddable iframe booking form, Reserve-with-Google, and a one-click reservation copy into Zenchef.
 
-Source: portfolio company of [serena](https://github.com/api-evangelist/serena) — https://www.joy.io/
+**Areas:** Company · Marketplace · Reservations · Booking · Restaurant · Hospitality · Event · Software-as-a-Service · France
+
+## Joy (ex-Privateaser) on APIs.io
+
+Everything profiled for Joy (ex-Privateaser) is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/joy-io/](https://apis.io/providers/joy-io/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Joy Io Domain Security](https://apis.io/security/joy-io/joy-io-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Joy Io Plans Pricing](https://apis.io/plans/joy-io/joy-io-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Joy Io Rate Limits](https://apis.io/rate-limits/joy-io/joy-io-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://joy.io/)
+- [Pricing](https://joy.io/nos-offres)
+- [Support](https://faq.joy.io/)
+- [Blog](https://joy.io/blog)
+- [Terms of service](https://www.privateaser.com/cgu)
+- [Privacy policy](https://joy.io/politique-de-confidentialite)
+
+## API Evangelist rating
+
+**Kin Score 22.0** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 7.1 |
+| Access clarity | 76.3 |
+
+**Agent readiness 5.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | yes |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 13.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/joy-io/](https://apis.io/providers/joy-io/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Joy (ex-Privateaser): the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/joy-io/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
